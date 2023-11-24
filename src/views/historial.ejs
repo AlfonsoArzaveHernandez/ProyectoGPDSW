@@ -1,0 +1,22 @@
+<%historial.forEach((historial)=>{%> 
+                
+        
+                    
+    <details >
+        <summary><%= historial.name%></summary>
+        <div>
+            <ul  class="lista" >
+                <br>
+                <li>Fecha de la visita: <%= historial.date_visit%> </li>
+                <li>Tipo de visita: <%= historialype_visit%></li>
+                <li>Codigo de servicio: <%= historial.code_serv%></li>
+               <!-- <a href="/mostrarQr_visitaFav/<%= visita._id%>"><img src="img/qr_code_black.png" alt=""></a>
+                <a type="button" href="/agendarFechaFav/<%= visita._id%>"><img src="img/pencil.png" alt="Editar"></a>-->
+
+                <br>
+            </ul>
+        </div>
+        
+    </details>
+<% }); %>-
+

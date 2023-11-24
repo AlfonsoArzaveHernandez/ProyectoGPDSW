@@ -1,0 +1,45 @@
+
+.cover{
+    background: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    animation: fade-out 2s;
+}
+
+.cover #icon{
+    --size: 10em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--size);
+    animation: zoom-in 2s;
+    animation-delay: 0;
+}
+
+@keyframes zoom-in {
+    50%{
+        width: var(--size);
+    }
+    60%{
+        width: calc(var(--size)*0.9);
+    }
+    100%{
+        width: 250%;
+    }
+}
+
+@keyframes fade-out {
+    0%, 85%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.content{
+    width: 100%;
+}

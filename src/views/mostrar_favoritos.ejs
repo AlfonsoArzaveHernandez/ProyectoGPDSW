@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/principalUsuario.css">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    
+    <div id="blue-div">
+
+        <div id="header">
+
+            <div id="header">
+
+                <ul class="nav">
+                    <li><a id="back" href="/inicio"><img src="img/back_icon_white.png" alt=""></a></li>
+                    <li><img id="menu-img" src="img/menu_icon.png" alt="">
+                        <ul>
+                            <li><a href="/salirSesion_usuario">Cerrar sesion</a></li>
+                            <li><a href="/historialFavoritos"> Historial favoritos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        
+            </div>
+
+
+        <div id="saludo">
+            <p>Bienvenido a tus visitas favoritas <%= user.name %> </p>
+        </div>
+
+        <div id="star">
+            <div>
+                <img src="img/favorite-icon.svg" alt="">
+            </div>
+        </div>
+
+        <div>
+
+            <%visita.forEach((visita)=>{%> 
+            
+    
+                
+                <details >
+                    <summary><%= visita.name%></summary>
+                    <div>
+                        <ul  class="lista" >
+                            <br>
+                            <li>ID: <%= visita._id%></li>
+                            <a href="/mostrarQr_visitaFav/<%= visita._id%>"><img src="img/qr_code_black.png" alt=""></a>
+                            <a type="button" href="/agendarFechaFav/<%= visita._id%>"><img src="img/pencil.png" alt="Editar"></a>
+                            
+
+                            <br>
+                        </ul>
+                    </div>
+                    
+                </details>
+            <% }); %>
+    
+            <div>
+
+
+
+</body>
+</html>

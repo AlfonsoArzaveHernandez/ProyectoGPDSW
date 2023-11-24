@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/principalUsuario.css">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    <div id="blue-div">
+
+
+        <div id="header">
+
+            <ul class="nav">
+                <li><a id="back" href="/mostrar_favoritos"><img src="img/back_icon_white.png" alt=""></a></li>
+                <li><img id="menu-img" src="img/menu_icon.png" alt="">
+                    <ul>
+                        <li><a href="/salirSesion_usuario">Cerrar sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+        </div>
+
+
+
+        <div id="saludo">
+            <p>Bienvenido al historial de  tus visitas favoritas <%= user.name %> </p>
+        </div>
+
+        <div id="star">
+            <div>
+                <img src="img/favorite-history-icon-2.png" alt="">
+            </div>
+        </div>
+
+
+    
+    </div>
+
+
+       
+
+        <div>
+
+            <%historial.forEach((historial)=>{%> 
+            
+    
+                
+                <details >
+                    <summary><%= historial.name%></summary>
+                    <div>
+                        <ul  class="lista" >
+                            <br>
+                            <li>ID: <%= historial._id%></li>
+                            <li>Fecha de la visita: <%= historial.date_visit%> </li>
+                            <li>Hora de entrada: <%=historial.date_entrada%></li>
+                            <li>Comentario de entrada: <%=historial.comentario%></li>
+                            <li>Hora de salida: <%=historial.date_salida%></li>
+                            <li>Comentario de salida: <%=historial.comentario_salida%></li>
+                            
+                            <a type="button" href="/eliminarLogicoHistFav/<%= historial._id%>"><img src="img/trash-3.png" alt="Borrar"></a>
+
+                            <br>
+                        </ul>
+                    </div>
+                    
+                </details>
+            <% }); %>
+    
+            <div>
+
+
+
+</body>
+</html>

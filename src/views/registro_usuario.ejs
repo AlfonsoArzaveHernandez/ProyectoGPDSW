@@ -1,0 +1,66 @@
+<%- layout('layouts/plantilla.ejs')%>
+
+
+<form class="form" action="/registro_usuario" method="POST">
+
+    <div id="back-icon">
+        <a href="/mostrar_usuarios"><img src="img/back_icon.png"></a>
+    </div>
+
+    <h1>Registro usuario</h1>
+    <div id="logo">
+        <img src="img/user_icon.png" alt="">
+    </div>
+
+    <div class="form_container">
+
+        <h4><% if (registroMensaje) {%>
+
+            <div><%= registroMensaje %></div>
+            <% } %>
+        </h4>
+
+        <div class="form_group">
+            <input type="number" id="telefono" name="telefono" class="form_input" required placeholder=" ">
+            <label for="telefono" class="form_label">Telefono: </label>
+            <span class="form_line"></span>
+        </div>
+
+        <div class="form_group">
+            <input type="text" id="name" name="name"  class="form_input" required placeholder=" ">
+            <label for="name" class="form_label">Nombre: </label>
+            <span class="form_line"></span>
+        </div>
+
+        <div class="form_group">
+            <input type="password" id="password" name="password" class="form_input" required placeholder=" ">
+            <label for="password"  class="form_label">Contraseña:  </label>
+            <span class="form_line"></span>
+        </div>
+
+        <div class="form_group">
+            <input type="text" id="calle" name="calle" class="form_input" required placeholder=" ">
+            <label for="calle"  class="form_label">Calle:  </label>
+            <span class="form_line"></span>
+        </div>
+
+        <div class="form_group">
+            <input type="number" id="numeroExt" name="numeroExt" class="form_input" required placeholder=" ">
+            <label for="numeroExt"  class="form_label">No. ext:  </label>
+            <span class="form_line"></span>
+        </div>
+
+        <div class="form_group">
+            <input type="number" id="numeroInt" name="numeroInt" class="form_input" required placeholder=" ">
+            <label for="numeroInt"  class="form_label">No. Int:  </label>
+            <span class="form_line"></span>
+        </div>
+
+        <div class="form_group">
+            <input type="hidden" id="role" name="role" class="form_input" value="Residente" >
+        </div>
+
+        <button type="submit" class="btn">Registrar</button>
+
+    </div>
+</form>

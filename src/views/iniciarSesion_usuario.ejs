@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP SAN GIL</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/splash.css">
+    <script src="splash.js"></script>
+    
+</head>
+
+<body>
+    
+
+<form class="form" action="/iniciarSesion_usuario" method="POST">
+    <div id="logo">
+        <img src="img/user_icon.png" alt="">
+    </div>
+
+    <div class="form_container">
+
+        <h4><% if (inicioSesionMensaje) {%>
+
+            <div><%= inicioSesionMensaje %></div>
+            <% } %>
+        </h4>
+
+        
+
+        <div class="form_group">
+            <input type="text" id="telefono" name="telefono" required class="form_input" placeholder=" ">
+            <label for="telefono" class="form_label">Telefono: </label>
+            <span class="form_line"></span>
+        </div>
+
+     
+        <div class="form_group">
+            <input type="password" id="password" name="password" required class="form_input" placeholder=" ">
+            <label for="password"  class="form_label">Contraseña:  </label>
+            <span class="form_line"></span>
+        </div>
+     
+        
+        <button type="submit" class="btn">Entrar</button>
+        
+        <div class="form_group">
+            <a href="/iniciarSesion_admin"><img id="img-sesion-admin" src="img/admin_conf.png" alt=""></a>
+        </div>
+
+        
+
+    </div>
+</form>
+
+<div class="cover">
+    <img id="icon" src="img/clubGolfSanGil.png" alt="">
+</div>
+
+<!-- <a  href="/scanner">SCANNER</a> -->
+</body>
+
+
+</html>
+
+
+    

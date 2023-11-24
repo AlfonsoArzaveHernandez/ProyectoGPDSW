@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/mostrarUsuarios.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+  
+
+    <div id="blue-div">
+
+
+        <div id="header">
+
+            <ul class="nav-one-element">
+                <li><img id="menu-img" src="img/menu_icon.png" alt="">
+                    <ul>
+                        <li><a href="/salirSesion_admin">Cerrar sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+        </div>
+
+        
+    
+
+        <div id="saludo">
+            <p>Hola <%= user.name %></p>
+        </div>
+
+
+        <div id="botones">
+
+            <div class="cube">
+                <div class="cube-button">
+                    <a href="/registro_admin"><img src="img/add-icon.png" alt=""></a>
+                </div>
+                <label for="cube-button1">Admin</label>
+            </div>
+
+            <div class="cube">
+                <div class="cube-button">
+                    <a href="/mostrar_admins"><img src="img/trash-white-1.png" alt=""></a>
+                </div>
+                <label for="cube-button2">Borrar Admins</label>
+            </div>
+    
+            <div class="cube">
+                <div class="cube-button">
+                    <a href="/registro_usuario"><img src="img/add-icon.png" alt=""></a>
+                </div>
+                <label for="cube-button3">Usuario</label>
+            </div>
+    
+
+        </div>
+
+    </div>
+
+    <h2 id="h2-mostrar-residentes" >Residentes Registrados</h2>
+
+    <details class="download">
+        <summary class="summary-download"><img src="img/download-icon-text.png"></summary>
+        <div>
+            <ul class="lista-download">
+                <br>
+
+
+                <li>
+                    <form action="/descargarResidentes" method="POST">
+                        <button id="btn__descargarResidentes" class="btn-download" type="submit"> <img class="download__icon" src="img/download-icon-text.png"></button>
+                        <label for="btn__descargarResidentes">RESIDENTES REGISTRADOS</label>
+                    </form>
+                </li>
+
+                <li>
+                    <form action="/descargarVisiFav" method="POST">
+                        <button id="btn__descargarVisiFav" class="btn-download" type="submit"> <img class="download__icon" src="img/download-icon-text.png"></button>
+                        <label for="btn__descargarVisiFav">TABLA VISITAS FAVORITAS</label>
+                    </form>
+                </li>
+
+                <li>
+                    <form action="/descargarHistVis" method="POST">
+                        <button id="btn__descargarHistVis" class="btn-download" type="submit"> <img class="download__icon" src="img/download-icon-text.png"></button>
+                        <label for="btn__descargarHistVis">HISTORIAL DE VISITAS</label>
+                    </form>
+                </li>
+
+                <li>
+                    <form action="/descargarHistVisFav" method="POST">
+                        <button id="btn__descargarHistVisFav" class="btn-download" type="submit"> <img class="download__icon" src="img/download-icon-text.png"></button>
+                        <label for="btn__descargarHistVisFav">HISTORIAL DE VISITAS FAVORITAS</label>
+                    </form>
+                </li>
+                <br>
+            </ul>
+        </div>
+    </details>
+
+    
+
+      <div>
+        <%usuario.forEach((usuario)=>{%> 
+    
+            
+            <details>
+                <summary><%= usuario.name%></summary>
+                <div>
+                    <ul class="lista">
+                        <br>
+                        <li>ID: <%= usuario._id%></li>
+                        <li>Telefono: <%= usuario.telefono%> </li>
+                        <li>Calle: <%= usuario.calle%> </li>
+                        <li>No. ext: <%= usuario.numeroExt%></li>
+                        <li>No. int: <%= usuario.numeroInt%></li>
+                        <li>Fecha de registro: <%= usuario.date%></li>
+
+                        <div id="iconos">
+
+                                <a type="button" href="/editar_usuario/<%= usuario._id%>"><img src="img/pencil.png" alt="Editar"></a>
+              
+                                <a type="button" href="/borrar_residente/<%= usuario._id%>"><img src="img/trash-3.png" alt="Borrar"></a>
+
+                                <a type="button" href="/historialVisitas_residente/<%= usuario._id%>"><img src="img/history-1.png" alt="Borrar"></a>
+                                
+                                <a type="button" href="/visitasFavoritas_residente/<%= usuario._id%>"><img src="img/favorite-icon-button.png" alt="Borrar"></a>
+
+                        </div>
+                        <br>
+                    </ul>
+                </div>
+                
+            </details>
+        <% }); %>
+
+    </div>
+
+</body>
+</html>

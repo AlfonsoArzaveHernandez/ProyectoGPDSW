@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/principalUsuario.css">
+    <link rel="stylesheet" href="css/mostrarUsuarios.css">
+</head>
+<body>
+
+    
+
+
+
+    <div id="blue-div">
+
+        <div id="header">
+
+            <ul class="nav-one-element">
+                <li><img id="menu-img" src="img/menu_icon.png" alt="">
+                    <ul>
+                        <li><a href="/salirSesion_usuario">Cerrar sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+        </div>
+
+        
+        <!-- <div class="menu-container">
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu" class="button"><img src="img/menu_icon.png" alt=""></label>
+            <nav class="menu">
+                <a class="menu-link" href="">Cerrar sesion</a>
+            </nav>
+
+        </div>  -->
+
+
+        <div id="saludo">
+            <p>Hola <%= user.name %> </p>
+        </div>
+
+
+        <div id="botones">
+
+            <!--<div class="cube">
+                <div class="cube-button">
+                    <a href="/miQr"><img src="img/qr-code.png" alt=""></a>
+                </div>
+                <label for="cube-button2">Mi QR</label>
+            </div>-->
+    
+            <div class="cube">
+                <div class="cube-button">
+                    <a href="/registrar_visita"><img src="img/add-icon.png" alt=""></a>
+                </div>
+                <label for="cube-button3">Invitar</label>
+            </div>
+
+            <div class="cube">
+                <div class="cube-button">
+                    <a href="/mostrar_favoritos"><img src="img/favorite-icon.svg" alt=""></a>
+                </div>
+                <label for="cube-button3">Mis favoritos</label>
+            </div>
+
+        </div>
+
+       
+
+   
+        <div id="historial">
+            <h2 id="h2-mostrar-residentes" >Historial de visitas</h2>
+            <%visita.forEach((visita)=>{%> 
+            
+    
+                
+                
+                <details>
+                    <summary><%= visita.name%></summary>
+                    <div>
+                        <ul class="lista">
+                            <br>
+                            <li>ID: <%= visita._id%></li>
+                            <li>Fecha de la visita: <%= visita.date_visit%> </li>
+                            <!-- <li>Tipo de visita: <%= visita.type_visit%></li>
+                            <li>Codigo de servicio: <%= visita.code_serv%></li> -->
+                            <li>Hora de entrada: <%=visita.date_entrada%></li>
+                            <li>Comentario de entrada: <%=visita.comentario%></li>
+                            <li>Hora de salida: <%=visita.date_salida%></li>
+                            <li>Comentario de salida: <%=visita.comentario_salida%></li>
+
+                                
+                            <a href="/mostrarQr_visita2/<%= visita._id%>"><img src="img/qr_code_black.png" alt=""></a>
+                            <a type="button" href="/eliminarLogico/<%= visita._id%>"><img src="img/trash-3.png" alt="Borrar"></a>
+
+                            <br>
+                        </ul>
+                    </div>
+                    
+                </details>
+            <% }); %>
+    
+        </div>
+
+</body>
+</html>
+

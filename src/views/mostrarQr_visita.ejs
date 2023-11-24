@@ -1,0 +1,18 @@
+<%- layout('layouts/plantilla.ejs')%>
+
+
+<form class="form" >
+
+    <div id="back-icon">
+        <a href="/inicio"><img src="img/back_icon.png"></a>
+    </div>
+    
+    <div class="form_container">
+
+        <h1>Tu QR esta listo</h1>
+
+        <div class="form_group">
+            <img id="imagen"src=<%=qr_code %> alt="QR Code">
+        </div>
+    </div>
+</form>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/mostrarUsuarios.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+
+    <div id="blue-div">
+
+        <div id="header">
+
+            <ul class="nav">
+                <li><a id="back" href="/mostrar_usuarios"><img src="img/back_icon_white.png" alt=""></a></li>
+                <li><img id="menu-img" src="img/menu_icon.png" alt="">
+                    <ul>
+                        <li><a href="/salirSesion_admin">Cerrar sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+        </div>
+
+    
+
+        <div id="saludo">
+            <p>Hola <%= user.name %></p>
+        </div>
+
+        <div id="admin">
+            <div>
+                <img src="img/admin-icon-white-1.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    
+      <div>
+
+        <%usuario.forEach((usuario)=>{%> 
+            
+            <details>
+                <summary><%= usuario.name%></summary>
+                <div>
+                    <ul class="lista">
+                        <br>
+                        <li>ID: <%= usuario._id%></li>
+                        <li>Telefono: <%= usuario.telefono%> </li>
+                        <li>Fecha de registro: <%= usuario.date%></li>
+
+                        <div id="iconos">
+                        
+                            <a type="button" href="/borrar_administrador/<%= usuario._id%>"><img src="img/trash-3.png" alt="Borrar"></a>
+
+                        </div>
+                        <br>
+                    </ul>
+                </div>
+                
+            </details>
+        <% }); %>
+
+    </div>
+
+</body>
+</html>
+

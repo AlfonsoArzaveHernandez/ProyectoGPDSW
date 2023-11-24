@@ -1,0 +1,88 @@
+<%- layout('layouts/plantilla.ejs')%>
+
+<form class="form" action="/registrar_visita" method="POST">
+
+    <div id="back-icon">
+        <a href="/inicio"><img src="img/back_icon.png"></a>
+    </div>
+ 
+    
+    <div class="form_container">
+
+        <h1>Crear invitación</h1>
+
+   
+        <div class="form_group">
+            <input type="text" id="name" name="name" required class="form_input" placeholder=" ">
+            <label for="name" class="form_label">Nombre: </label>
+            <span class="form_line"></span>
+        </div>
+
+   <script type="text/javascript" >
+      function desactivar(){
+        
+          if(onclick="document.getElementById('favorito').disabled = this.checked"){
+              document.getElementById("date_visit").disabled=true;
+          }else if(onclick="document.getElementById('favorito').disabled = !this.checked"){
+            document.getElementById("date_visit").disabled=false;
+
+          }
+      }
+            
+    </script>
+    
+        
+
+        <!-- <div id="radio_button">
+                <div>
+                    <input type="radio" id="visit_fam"
+                    name="type_visit" value="visita de familiar">
+                    <label for="visit_fam">Familiar</label>
+                </div>
+
+            <div>
+                <input type="radio" id="visit_serv"
+                name="type_visit" value="visita de servicio">
+                <label for="visit_serv">Servicio</label>
+            </div> -->
+
+          
+            <% if (visita.length >= 5){%>
+                
+                <div id="checkbox-favorite"></div>
+                <p>Solo se permiten 5 visitas favoritas</p>
+                </div>
+        <%}else{%>
+            <div id="checkbox-favorite">
+                <input type="checkbox" id="favorito" name="favorito"  value="favorito"  onclick="desactivar()">
+                <label for="favorito"><span id="icono" class="icon icon-star-full" ></span> Favorito</label>
+            </div>
+        </div><%}%>
+
+        <div class="form_group">
+            <input type="date" id="date_visit" name="date_visit" required class="form_input" placeholder=" ">
+            <label for="date_visit"  class="form_label">fecha:  </label>
+            <span class="form_line"></span>
+        </div>
+     
+        
+        <!-- <div class="form_group">
+            <input type="text" id="code_serv" name="code_serv" value="N/A" class="form_input" placeholder=" ">
+            <label for="code_serv"  class="form_label">Codigo del servicio:</label>
+            <span class="form_line"></span>
+        </div> -->
+
+        
+        <button id="btn-agendar-fecha" type="submit" class="btn">Guardar visita</button>
+    
+
+    </div>
+</form>
+
+
+            
+
+
+
+    
+
